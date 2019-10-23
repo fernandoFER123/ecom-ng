@@ -1,0 +1,19 @@
+<p>egresados-form works!</p>
+<h1>persona</h1>
+<form [formGroup]="egresadosForm" (ngSubmit)="save()">
+    <div [hidden]="true">
+        <input type="text" formControlName="id" name="id" id="id" >
+    </div>
+    <label>
+        Fecha Ingreso:
+        <input type="date" formControlName="fecha_ingreso" name="fecha_ingreso" id="fecha_ingreso"  class="form-control" required>
+    </label>
+    <br>
+    <label>
+        Fecha Egreso:
+        <input type="date" formControlName="fecha_egreso" name="fecha_egreso" id="fecha_egreso"  class="form-control" required> 
+    </label>
+    <br>
+    <button type="submit" [disabled]="!egresadosForm.valid">Save</button>
+</form>
+<p>{{ egresadosForm.value | json }}</p>

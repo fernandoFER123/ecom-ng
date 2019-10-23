@@ -1,0 +1,36 @@
+	<h1>persona</h1>
+<form [formGroup]="personaForm" (ngSubmit)="save()">
+    <div [hidden]="false">
+        <input type="text" formControlName="id" name="id" id="id" >
+    </div>
+    <label>
+        Nombre:
+        <input type="text" formControlName="nombre" name="nombre" id="nombre" required>
+        <div [hidden]="personaForm.get('nombre').valid || 
+        personaForm.get('nombre').pristine" class="alert alert-danger">
+            Titulo is required
+        </div>
+    </label>
+    <br>
+    <label>
+        Apellido:
+        <input type="text" formControlName="apellido" name="apellido" id="apellido" required>
+    </label>
+    <br>
+    <label>
+        Telefono:
+        <input type="text" formControlName="telefono" name="telefono" id="telefono" required>
+    </label>
+    <br>
+    <label>
+        Direccion:
+        <input type="text" formControlName="direccion" name="direccion" id="direccion" required>
+    </label>
+    <label>
+        Egresado:
+        <input type="text" formControlName="egresadoID" name="egresadoID" id="egresadoID" required>
+    </label>
+    <br>
+    <button type="submit" [disabled]="!personaForm.valid">Save</button>
+</form>
+<p>{{ personaForm.value | json }}</p>
