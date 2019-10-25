@@ -23,11 +23,13 @@ export class PersonaFormComponent implements OnInit {
   ngOnInit() {
     this.personaForm = this.formBuild.group({
       id: [''],
-      nombre: ['', [Validators.required]],
-      apellido: ['', [Validators.required]],
-      telefono: ['', [Validators.required]],
-      direccion: ['', [Validators.required]],
-      egresadoID:'',
+        nombre: ['', [Validators.required]],
+        apellidoP: ['', [Validators.required]],
+        apellidoM: ['', [Validators.required]],
+        telefono: ['', [Validators.required]],
+        direccion: ['', [Validators.required]],
+        email: ['', [Validators.required]],
+        egresadoID:'',
     });
     //get data
     let id = this.route.snapshot.paramMap.get('id');

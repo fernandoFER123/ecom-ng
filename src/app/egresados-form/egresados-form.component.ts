@@ -21,8 +21,16 @@ export class EgresadosFormComponent implements OnInit {
   ngOnInit() {
     this.egresadosForm = this.formBuild.group({
       id: [''],
-      fecha_egreso: ['', [Validators.required]],
+      nombre_egresado: ['', [Validators.required]],
+      apellido_paterno: ['', [Validators.required]],
+      apellido_materno: ['', [Validators.required]],
+      numero_telefono: ['', [Validators.required]],
+      dni: ['', [Validators.required]],
+      codigo_universitario: ['', [Validators.required]],
+      direccion: ['', [Validators.required]],
       fecha_ingreso: ['', [Validators.required]],
+      fecha_egreso: ['', [Validators.required]],
+      email: ['', [Validators.required]],
     });
     //get data
     let egresadoID = this.route.snapshot.paramMap.get('id');
